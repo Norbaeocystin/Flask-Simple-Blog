@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 	<meta charset="UTF-8">
+ 	<title>Post</title>
+ 	<!-- Load code snippets CSS theme -->
+ 	{{ ckeditor.load_code_theme() }}
+<style>
+div {
+    margin: auto;
+}
+nav { 
+    text-align: center 
+    }
+.central {
+    text-align: center;
+    }
+#disqus_thread
+    {width:700px;
+    text-align:center
+    }
+</style>
+</head>
+<body>
+    <div>
+    <br><br>
+    <nav>
+<h3><a href="/">Blog</a> |
+<a href="/categories">Categories</a> |
+<a href="/about">About</a> |
+<a href="/contact">Contact</a></h3>
+    </nav><br><br>
+    </div>
+	<div class="wrapper" style="width: 900px; margin: auto">
+        <p class='central'>Posted by {{author}} {{ creationTime }}</p>
+		<hr>
+		<h1 class='central'>{{ title }}</h1>
+		<hr>
+        <h3 class='central'>{{ tags }}</h3>
+		<hr>
+		<p>{{ body|safe }}</p>
+		<hr>
+	</div>
+    <div id="disqus_thread"></div>
+<script>
+var disqus_config = function () {
+this.page.url = <yoursite>;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = '{{title}}';
+}; 
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '<your site>.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</body>
+</html>

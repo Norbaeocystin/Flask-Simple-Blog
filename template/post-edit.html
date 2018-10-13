@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+ 	<meta charset="UTF-8">
+ 	<title>Edit Post</title>
+ 	<!-- Load code snippets CSS theme -->
+ 	{{ ckeditor.load_code_theme() }}
+<style>
+div {
+    text-align: center;
+    margin: auto;
+}
+</style>
+</head>
+<body>
+    <nav>
+<a href="/admin">Admin</a> 
+</nav>
+	<div class="wrapper" style="width: 700px; margin: auto">
+        <p>Posted by {{author}} {{ creationTime }}</p>
+		<hr>
+		<h1>{{ title }}</h1>
+		<hr>
+        <h3>{{ tags }}</h3>
+		<hr>
+		<p>{{ body|safe }}</p>
+		<hr>
+	</div>
+    <div id="disqus_thread" style ='width:500px;text-align:center'></div>
+<script>
+var disqus_config = function () {
+this.page.url = baralaboratory.com;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = '{{title}}';
+}; 
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://baralaboratory-com.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</body>
+</html>

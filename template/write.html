@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    {{ ckeditor.load() }}
+</head>
+<body>
+    <nav>
+<a href="/admin">Admin</a> |
+<a href="/admin/write">Write</a> |
+<a href="/admin/edit">Edit</a> |
+<a href="/admin/logout">Logout</a>
+</nav>
+	<div class="wrapper" style="width: 700px; margin: auto">
+		<h1>{{name_}}</h1>
+		<form method="post">
+			{{ form.csrf_token }}
+            {{ form.author.label }}<br>
+			{{ form.author}}<br><br>
+			{{ form.title.label }}<br>
+			{{ form.title }}<br><br>
+            {{ form.tags.label }}<br>
+            {{ form.tags }}<br><br>
+            {{ form.publish.label }}<br>
+			{{ form.publish}}<br><br>
+			{{ form.body.label }}<br>
+			{{ form.body }}<br><br>
+			<br>
+			{{ form.submit }}
+		</form>
+	</div>
+	{{ ckeditor.config(name='body') }}
+</body>
+</html>

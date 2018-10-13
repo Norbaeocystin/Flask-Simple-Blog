@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+    <meta charset="UTF-8">
+ 	<title>Admin</title>
+</head> 
+<body>
+   <nav>
+<a href="/admin">Blog</a> |
+<a href="/admin/write">Write</a> |
+<a href="/admin/edit">Edit</a> |
+<a href="/admin/logout">Logout</a>
+</nav>
+<br><br>
+        {% for item in posts %}
+         <a href="{{item[0]}}">{{item[1]}}</a><br>
+        {% endfor %}
+     </body>
+</html>

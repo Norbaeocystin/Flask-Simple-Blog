@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+ 	<meta charset="UTF-8">
+ 	<title>Edit</title>
+ 	<!-- Load code snippets CSS theme -->
+ 	{{ ckeditor.load_code_theme() }}
+<style>
+div {
+    text-align: center;
+}
+</style>
+</head>
+<body>
+    <div>
+    <nav>
+        <a href="/admin">Blog</a> |
+        <a href="/admin/write">Write</a> |
+        <a href="/admin/edit">Edit</a> |
+        <a href="/admin/logout">Logout</a>
+    </nav>
+    </div>
+    <div>
+        {% for item in posts %}
+         <a href="{{item[0]}}">{{item[1]}}</a><br>
+        {% endfor %}
+    </div>
+</body>
+</html>
